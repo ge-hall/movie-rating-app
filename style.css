@@ -38,6 +38,10 @@
   @apply text-gray-800 text-sm pr-1;
 }
 
-.movie-item-star-icon {
-  @apply inline-block p-[2px] text-yellow-500 text-lg;
+.movie-item-star-icon-active {
+  @apply  text-yellow-500;
+}
+
+.movie-item-rating-button {
+	@apply inline-block p-[2px] text-gray-800 text-lg;
 }

@@ -19,22 +19,21 @@ const movies = ref(items);
         <div class="movie-title-wrapper">
           <p class="text-black text-xl">{{ movie.name }}</p>
           <div class="flex flex-row">
-            <span
-              v-for="genre in movie.genres"
-              :key="genre"
-              class="movie-item-genre-label"
-              >{{ genre }}</span
-            >
+            <span v-for="genre in movie.genres" :key="genre" class="movie-item-genre-label">{{ genre }}</span>
           </div>
           <p class="movie-item-description">{{ movie.description }}</p>
           <div class="movie-item-rating-wrapper">
             <p class="movie-item-rating-text">Rating: ({{ movie.rating }}/5)</p>
-            <span
-              v-for="rating in movie.rating"
-              :key="rating"
-              class="movie-item-star-icon"
-              >⭐
-            </span>
+            <!-- remove manual rating 
+	    replace with buttons to change rating -->
+            <div class="movie-item-rating-button" v-for="star_index in 5" :key="star_index">
+              <button @click="movie.rating = star_index" v-if="star_index === movie.rating">
+                <p v-if="star_index <= movie.rating" class="movie-item-star-icon-active">
+                  ⭐
+                </p>
+                <p v-else>⭐</p>
+              </button>
+            </div>
           </div>
         </div>
       </div>
